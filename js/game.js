@@ -88,6 +88,7 @@ document.getElementById("qwerty").addEventListener("click", function(event){
       console.log("why", checkLetter(event));
       console.log("letterFound:",letterFound)
     }
+    checkWin();
 });
 
 function updateHeart(missed){
@@ -101,4 +102,7 @@ console.log(letterFound);
 
 function checkWin(){
   console.log("Are we winning? or are we winning?");
+  if (missed == 5){
+    console.log("game over");
+  }
 }
