@@ -63,6 +63,8 @@ function checkLetter(buttonClicked){  // console.log("what is in here?", buttonC
           currentLetterList[i].classList.add("show");
         }
       }
+      // after completing for loop, end function with returning null
+      return null;
     // }
 }
 
