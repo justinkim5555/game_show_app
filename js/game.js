@@ -99,4 +99,6 @@ function updateHeart(missed){
 console.log(letterFound);
 
 
-// Count the number of misses
+function checkWin(){
+  console.log("Are we winning? or are we winning?");
+}
