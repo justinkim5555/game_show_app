@@ -50,9 +50,8 @@ function addPhraseToDisplay(arr){
 const phraseArray = getRandomPhraseArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-console.log("What is this?", phraseArray);
+// console.log("What is this?", phraseArray);
 const currentLetterList = document.getElementsByClassName('letter');
-console.log("What is this2?",currentLetterList[0]);
 // Check function will be used inside event listener
 function checkLetter(buttonClicked){  // console.log("what is in here?", buttonClicked.target.textContent);
   //   if (buttonClicked.textContent){
