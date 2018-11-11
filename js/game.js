@@ -55,7 +55,6 @@ console.log("What is this?", phraseArray);
 // Check function will be used inside event listener
 function checkLetter(buttonClicked){
   const currentLetterList = document.getElementsByClassName('letter');
-  console.log(currentLetterList);
 
     if (buttonClicked.target.className == "letter"){
       for (var i=0; i < currentLetterList.length; i++){
