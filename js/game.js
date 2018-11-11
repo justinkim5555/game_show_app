@@ -58,7 +58,7 @@ const currentLetterList = document.getElementsByClassName('letter');
 // Check function will be used inside event listener
 function checkLetter(buttonClicked){
 
-  var letterFound = null; // set default as null
+  var letterFound = "null"; // set default as null
       for (var i=0; i < currentLetterList.length; i++){
         console.log("what is this?", currentLetterList[1].textContent);
         if (currentLetterList[i].textContent == buttonClicked.target.textContent){
@@ -69,10 +69,10 @@ function checkLetter(buttonClicked){
       return letterFound;
 
 }
-var missed = 0;
 var letterFound;
 
 document.getElementById("qwerty").addEventListener("click", function(event){
+  var missed = 0;
   const isButton = event.target.nodeName === 'BUTTON';
     if (!isButton) {
       return;
@@ -81,14 +81,22 @@ document.getElementById("qwerty").addEventListener("click", function(event){
       console.log(event);
       event.target.classList.add("chosen");
       letterFound = checkLetter(event);
-        if letterFound == "null"{
+      console.log("wtf is in letterFound", letterFound);
+        if (letterFound == "null"){
           missed += 1;
-          // removeHeart
+          console.log("how many missed?", missed);
+          updateHeart(missed);
         }
       console.log("why", checkLetter(event));
       console.log("letterFound:",letterFound)
     }
 });
+
+function updateHeart(missed){
+  console.log("where is my heart?", hearts[missed]);
+  hearts[missed].setAttribute("src","images/lostHeart.png");
+}
+
 
 console.log(letterFound);
 
