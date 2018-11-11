@@ -57,7 +57,6 @@ function checkLetter(buttonClicked){  // console.log("what is in here?", buttonC
   //   if (buttonClicked.textContent){
       for (var i=0; i < currentLetterList.length; i++){
         if (currentLetterList[i].textContent == buttonClicked.target.textContent){
-          console.log("wtf", currentLetterList);
           currentLetterList[i].classList.add("show");
         }
         else{
