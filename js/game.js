@@ -81,9 +81,9 @@ document.getElementById("qwerty").addEventListener("click", function(event){
       letterFound = checkLetter(event);
       console.log("what is in letterFound", letterFound);
         if (letterFound == "null"){
-          missed += 1;
           console.log("how many missed?", missed);
           updateHeart(missed);
+          missed += 1;
         }
       console.log("why", checkLetter(event));
       console.log("letterFound:",letterFound)
@@ -92,7 +92,7 @@ document.getElementById("qwerty").addEventListener("click", function(event){
 
 function updateHeart(missed){
   console.log("where is my heart?", hearts[missed]);
-  hearts[missed].setAttribute("src","images/lostHeart.png");
+  hearts[missed].getElementsByTagName("img")[0].setAttribute("src","/images/lostHeart.png");
 }
 
 
