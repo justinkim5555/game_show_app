@@ -55,8 +55,8 @@ const currentLetterList = document.getElementsByClassName('letter');
 
 
 // Check function will be used inside event listener
-function checkLetter(buttonClicked){  // console.log("what is in here?", buttonClicked.target.textContent);
-  //   if (buttonClicked.textContent){
+function checkLetter(buttonClicked){
+
   var letterFound = null; // set default as null
       for (var i=0; i < currentLetterList.length; i++){
         console.log("what is this?", currentLetterList[1].textContent);
@@ -65,9 +65,8 @@ function checkLetter(buttonClicked){  // console.log("what is in here?", buttonC
           letterFound = currentLetterList[i].textContent;
         }
       }
-      // after completing for loop, end function with returning null
       return letterFound;
-    // }
+
 }
 
 var letterFound;
