@@ -62,6 +62,9 @@ function checkLetter(buttonClicked){
         if (currentLetterList[i] == buttonClicked.textContent){
           currentLetterList[i].classList.add("show");
         }
+        else{
+          return null;
+        }
       }
     }
 }
