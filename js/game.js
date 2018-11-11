@@ -11,26 +11,26 @@ document.getElementsByClassName('btn__reset')[0].addEventListener("click", funct
     document.getElementById("overlay").style.visibility = "hidden";
 });
 
+// Array of phrases
 var phrases = ["monkey", "apple", "juice", "james bond", "camp fire"];
 
-
+// Function to to generate random phrase
 function getRandomPhraseArray(arr){
-    //do stuff to any arr that is passed in
     console.log("Random word test: ", arr[Math.floor(Math.random() * arr.length)]);
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+// Invoke function
 getRandomPhraseArray(phrases);
 
-//set the game display
-
+// Set the game display
 function addPhraseToDisplay(arr){
   for (var i=0; i < arr.length; i++){
     var tempString = arr[i];
     for (char in tempString){
       if (tempString[char] == ' '){
         var list = document.createElement("li");
-        console.log("issa space!");
+        console.log("This is a space!");
         list.textContent = " ";
         console.log(list);
         document.querySelector('#phrase ul').appendChild(list);
@@ -38,6 +38,7 @@ function addPhraseToDisplay(arr){
       else{
         var list = document.createElement("li");
         list.textContent = tempString[char];
+        list.className = "letter";
         console.log(list.textContent = tempString[char]);
         console.log(list);
         document.querySelector('#phrase ul').appendChild(list);
@@ -49,12 +50,30 @@ function addPhraseToDisplay(arr){
 const phraseArray = getRandomPhraseArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-// check function will be used inside event listener
+console.log("What is this?", phraseArray);
 
+// Check function will be used inside event listener
 function checkLetter(buttonClicked){
 
+  let currentLetterList = document.getElementsByClassName('letter');
+
+    if (buttonClicked.target.className == "letter"){
+      for (var i=0; i < currentLetterList.length; i++){
+        if (currentLetterList[i] == buttonClicked.textContent){
+          currentLetterList[i].classList.add("show");
+        }
+      }
+    }
 }
 
-document.getElementById("qwerty").addEventListener("click", function(){
-
+document.getElementById("qwerty").addEventListener("click", function(event){
+  const isButton = event.target.nodeName === 'BUTTON';
+    if (!isButton) {
+      return;
+    }
+    else{
+      console.log(event);
+      event.target.classList.add("chosen");
+      checkLetter(event);
+    }
 });
