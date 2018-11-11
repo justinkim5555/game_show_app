@@ -51,21 +51,21 @@ const phraseArray = getRandomPhraseArray(phrases);
 addPhraseToDisplay(phraseArray);
 
 console.log("What is this?", phraseArray);
-
+const currentLetterList = document.getElementsByClassName('letter');
+console.log("What is this2?",currentLetterList[0]);
 // Check function will be used inside event listener
-function checkLetter(buttonClicked){
-  const currentLetterList = document.getElementsByClassName('letter');
-
-    if (buttonClicked.target.className == "letter"){
+function checkLetter(buttonClicked){  // console.log("what is in here?", buttonClicked.target.textContent);
+  //   if (buttonClicked.textContent){
       for (var i=0; i < currentLetterList.length; i++){
-        if (currentLetterList[i] == buttonClicked.textContent){
+        if (currentLetterList[i].textContent == buttonClicked.target.textContent){
+          console.log("wtf", currentLetterList);
           currentLetterList[i].classList.add("show");
         }
         else{
           return null;
         }
       }
-    }
+    // }
 }
 
 document.getElementById("qwerty").addEventListener("click", function(event){
