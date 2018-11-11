@@ -3,6 +3,7 @@ console.log("Game.js is running");
 // Grab things wrapped in qwerty div and phrase by their ID and store them in variables
 var qwerty = document.getElementById('qwerty');
 var phrase = document.getElementById('phrase');
+var hearts = document.getElementsByClassName('tries');
 
 // Initalize missed attempts to 0
 var missed = 0;
@@ -68,7 +69,7 @@ function checkLetter(buttonClicked){
       return letterFound;
 
 }
-
+var missed = 0;
 var letterFound;
 
 document.getElementById("qwerty").addEventListener("click", function(event){
@@ -80,9 +81,16 @@ document.getElementById("qwerty").addEventListener("click", function(event){
       console.log(event);
       event.target.classList.add("chosen");
       letterFound = checkLetter(event);
+        if letterFound == "null"{
+          missed += 1;
+          // removeHeart
+        }
       console.log("why", checkLetter(event));
       console.log("letterFound:",letterFound)
     }
 });
 
 console.log(letterFound);
+
+
+// Count the number of misses
