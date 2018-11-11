@@ -68,6 +68,8 @@ function checkLetter(buttonClicked){  // console.log("what is in here?", buttonC
     // }
 }
 
+var letterFound;
+
 document.getElementById("qwerty").addEventListener("click", function(event){
   const isButton = event.target.nodeName === 'BUTTON';
     if (!isButton) {
@@ -76,8 +78,10 @@ document.getElementById("qwerty").addEventListener("click", function(event){
     else{
       console.log(event);
       event.target.classList.add("chosen");
-      checkLetter(event);
+      letterFound = checkLetter(event);
       console.log("why", checkLetter(event));
-
+      console.log("letterFound:",letterFound)
     }
 });
+
+console.log(letterFound);
