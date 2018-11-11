@@ -60,7 +60,6 @@ function checkLetter(buttonClicked){
 
   var letterFound = "null"; // set default as null
       for (var i=0; i < currentLetterList.length; i++){
-        console.log("what is this?", currentLetterList[1].textContent);
         if (currentLetterList[i].textContent == buttonClicked.target.textContent){
           currentLetterList[i].classList.add("show");
           letterFound = currentLetterList[i].textContent;
@@ -80,7 +79,7 @@ document.getElementById("qwerty").addEventListener("click", function(event){
       console.log(event);
       event.target.classList.add("chosen");
       letterFound = checkLetter(event);
-      console.log("wtf is in letterFound", letterFound);
+      console.log("what is in letterFound", letterFound);
         if (letterFound == "null"){
           missed += 1;
           console.log("how many missed?", missed);
