@@ -70,9 +70,8 @@ function checkLetter(buttonClicked){
 
 }
 var letterFound;
-
+var missed = 0;
 document.getElementById("qwerty").addEventListener("click", function(event){
-  var missed = 0;
   const isButton = event.target.nodeName === 'BUTTON';
     if (!isButton) {
       return;
