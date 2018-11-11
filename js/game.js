@@ -52,15 +52,15 @@ addPhraseToDisplay(phraseArray);
 
 // console.log("What is this?", phraseArray);
 const currentLetterList = document.getElementsByClassName('letter');
+
+
 // Check function will be used inside event listener
 function checkLetter(buttonClicked){  // console.log("what is in here?", buttonClicked.target.textContent);
   //   if (buttonClicked.textContent){
       for (var i=0; i < currentLetterList.length; i++){
+        console.log("what is this?", currentLetterList[1].textContent);
         if (currentLetterList[i].textContent == buttonClicked.target.textContent){
           currentLetterList[i].classList.add("show");
-        }
-        else{
-          return null;
         }
       }
     // }
