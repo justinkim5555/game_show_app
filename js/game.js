@@ -83,12 +83,14 @@ document.getElementById("qwerty").addEventListener("click", function(event){
         if (letterFound == "null"){
           console.log("how many missed?", missed);
           updateHeart(missed);
+          checkWin();
+
           missed += 1;
         }
       // console.log("why", checkLetter(event));
       // console.log("letterFound:",letterFound)
     }
-    checkWin();
+    // checkWin();
 
 });
 
