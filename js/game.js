@@ -85,10 +85,11 @@ document.getElementById("qwerty").addEventListener("click", function(event){
           updateHeart(missed);
           missed += 1;
         }
-      console.log("why", checkLetter(event));
-      console.log("letterFound:",letterFound)
+      // console.log("why", checkLetter(event));
+      // console.log("letterFound:",letterFound)
     }
     checkWin();
+
 });
 
 function updateHeart(missed){
@@ -101,8 +102,18 @@ console.log(letterFound);
 
 
 function checkWin(){
-  console.log("Are we winning? or are we winning?");
+  var totalShows = 0;
   if (missed == 5){
+    document.getElementById('overlay').className = "lose";
     console.log("game over");
   }
+  for (var i=0; i<currentLetterList.length; i++){
+    if (currentLetterList[i]=="show"){
+      totalShows +=1;
+    }
+  }
+  if (totalShows == currentLetterList.length){
+    console.log("we won!");
+  }
+
 }
