@@ -63,6 +63,7 @@ function checkLetter(buttonClicked){
       for (var i=0; i < currentLetterList.length; i++){
         if (currentLetterList[i].textContent == buttonClicked.target.textContent){
           currentLetterList[i].classList.add("show");
+          totalShows +=1;
           letterFound = currentLetterList[i].textContent;
         }
       }
@@ -81,6 +82,7 @@ document.getElementById("qwerty").addEventListener("click", function(event){
       event.target.classList.add("chosen");
       letterFound = checkLetter(event);
       console.log("what is in letterFound", letterFound);
+      checkWin();
         if (letterFound == "null"){
           updateHeart(missed);
           missed += 1;
@@ -102,21 +104,25 @@ function updateHeart(missed){
 
 console.log(letterFound);
 
+var totalShows = 0;
 
 function checkWin(){
-  var totalShows = 0;
+  console.log("what's my current total shows?", totalShows);
   if (missed == 5){
     overlay.className = "lose";
+    overlay.style.visibility = "visible";
     console.log("what is my new class?", overlay.className);
     console.log("game over");
   }
-  for (var i=0; i<currentLetterList.length; i++){
-    if (currentLetterList[i]=="show"){
-      totalShows +=1;
-    }
-  }
+  // for (var i=0; i < currentLetterList.length; i++){
+  //   if (currentLetterList[i].className =="show"){
+  //     totalShows +=1;
+  //   }
+  // }
   if (totalShows == currentLetterList.length){
     console.log("we won!");
+    overlay.className = "win";
+    overlay.style.visibility = "visible";
   }
 
 }
