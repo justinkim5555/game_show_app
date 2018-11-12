@@ -2,6 +2,7 @@ console.log("Game.js is running");
 
 // Grab things wrapped in qwerty div and phrase by their ID and store them in variables
 var qwerty = document.getElementById('qwerty');
+var overlay = document.getElementById('overlay');
 var phrase = document.getElementById('phrase');
 var hearts = document.getElementsByClassName('tries');
 
@@ -81,11 +82,10 @@ document.getElementById("qwerty").addEventListener("click", function(event){
       letterFound = checkLetter(event);
       console.log("what is in letterFound", letterFound);
         if (letterFound == "null"){
-          console.log("how many missed?", missed);
           updateHeart(missed);
-          checkWin();
-
           missed += 1;
+          console.log("how many missed?", missed);
+          checkWin();
         }
       // console.log("why", checkLetter(event));
       // console.log("letterFound:",letterFound)
@@ -106,7 +106,8 @@ console.log(letterFound);
 function checkWin(){
   var totalShows = 0;
   if (missed == 5){
-    document.getElementById('overlay').className = "lose";
+    overlay.className = "lose";
+    console.log("what is my new class?", overlay.className);
     console.log("game over");
   }
   for (var i=0; i<currentLetterList.length; i++){
